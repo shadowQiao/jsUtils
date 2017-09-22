@@ -1,0 +1,6 @@
+滚动穿透是移动端开发的常见问题，大概有以下几种解决方案
+1.在打开弹窗前，设置body元素的overflow:hidden，并记下body元素的scollTop值，关闭弹窗前设置body元素overflow:auto，还原scrollTop
+此方法的缺点在于在IOS手机上没有用。此方法适用于弹窗是非透明的，可以完全覆盖页面，看不见后面的滚动。
+2.在打开弹窗前，设置body(容器)元素的position:fixed，并设置body(容器)元素的top值为其滚动的scollTop值，关闭弹窗前还原设置
+3.禁用弹窗的ontouchstart事件，此方法适用于弹窗上没有滚动的元素。
+4.禁用弹窗上没有滚动条的元素的ontouchstart事件，监听弹窗上有滚动条的元素，当滚动的高度到最上面和最下面的时候，禁用事件。
