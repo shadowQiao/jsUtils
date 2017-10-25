@@ -1,0 +1,17 @@
+1.浏览器的高层结构
+    1).用户界面 User Interface
+    2).浏览器引擎：用户界面和渲染引擎之间传送指令 Browser engine
+    3).渲染引擎(浏览器内核): Rendering engine
+    4).用户界面后端：用于绘制基本的窗口小部件，比如组合框和窗口。其公开了与平台无关的通用接口，而在底层使用操作系统的用户界面方法。UI Backend
+    5).网络：用于网络调用，比如 HTTP 请求。其接口与平台无关，并为所有平台提供底层实现。
+    6).javascript解释器：javascript interpreter
+    7).数据存储：Data Persistence
+2.各个浏览器使用的渲染引擎
+    1).firefox Gecko
+    2).safari和chrome Webkit
+    3).ie等浏览器 Trident
+    4).opera浏览器 Presto
+3.浏览器渲染过程
+    1).解析html，构建DOM Tree
+    2).解析css，构建CSS Rule Tree
+    3).DOM Tree + CSS Rule Tree => Rendering Tree

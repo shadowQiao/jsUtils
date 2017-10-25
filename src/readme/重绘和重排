@@ -1,0 +1,18 @@
+1.重绘
+    重新绘制受影响的部分到屏幕中
+2.重排
+    元素几何属性改变，浏览器会让受到影响的渲染树失效，重新构造渲染树
+3.何时发生重排？
+    1).添加或删除可见DOM元素
+    2).元素位置变化
+    3).元素尺寸变化
+    4).元素内容改变
+    5).页面渲染器初始化
+    6).浏览器窗口尺寸变化
+4.队列化修改并批量执行优化重排过程
+5.但是某些操作会强制刷新队列并要求计划任务立即执行
+    1).获取布局信息，即使没有任何更新操作，都会强制刷新渲染队列
+    offsetTop offsetLeft offsetWidth offsetHeight
+    scrollTop scrollLeft scrollWidth scrollHeight
+    clientTop clientLeft clientWidth clientHeight
+    getComputedStyle currentStyle

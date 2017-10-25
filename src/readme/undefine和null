@@ -1,0 +1,4 @@
+undefined是标识符，null是关键字
+undefined在非严格模式下可以直接赋值，null不行
+在严格模式和非严格模式下，我们都可以声明一个变量名为undefined，但是千万不能这样做
+void是一个运算符，用于使表达式不返回值，返回undefined

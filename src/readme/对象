@@ -1,0 +1,27 @@
+javascript包含以下几种类型
+1.null
+2.undefined
+3.string
+4.number
+5.boolean
+6.object
+    1).array
+    2).function
+7.symbol
+内置对象
+1.String
+2.Number
+3.Boolean
+4.Object
+5.Function
+6.Array
+7.Date
+8.RegExp
+9.Error
+var obj = {
+    name: 'shadow'
+};
+obj.propertyIsEnumerable('name'); => 自有可枚举属性
+obj.hasOwnProperty('name'); => 自有属性
+Object.keys() => 所有可枚举属性
+Object.getOwnPropertyNames() => 所有自有可枚举属性
