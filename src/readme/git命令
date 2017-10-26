@@ -1,0 +1,4 @@
+1.git branch
+批量删除一堆分支
+-d
+git branch |grep '关键词'|xargs git branch -d
