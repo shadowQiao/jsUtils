@@ -23,4 +23,67 @@ ssh过程：
     （2）登录的时候，远程主机会向用户发送一段随机字符串，用户用自己的私钥加密后，再发回来。
     （3）远程主机用事先储存的公钥进行解密，如果成功，就证明用户是可信的，直接允许登录shell，不再要求密码。
 生成公钥和私钥：
-    ssh-keygen -t
+    ssh-keygen -t rsa/rsa1/dsa -f 文件路径 - C 公钥文件的备注
+    "rsa1"(SSH-1) "rsa"(SSH-2) "dsa"(SSH-2)
+    默认生成id_rsa.pub和id_rsa
+目录结构：
+    ~/.ssh:
+        id_rsa
+        id_rsa.pub
+        config
+        known_hosts
+        authorized_keys
+    /etc/ssh:
+        moduli
+        ssh_config
+        sshd_config
+免密码登录：
+    （1）用户将自己的公钥储存在远程主机上。
+    （2）登录的时候，远程主机会向用户发送一段随机字符串，用户用自己的私钥加密后，再发回来。
+    （3）远程主机用事先储存的公钥进行解密，如果成功，就证明用户是可信的，直接允许登录shell，不再要求密码。
+两种方案：
+----------------------------------------------------------------------------------------
+    1.将我们的公钥拷贝到要登录的机器的./authorized_keys
+    2.并且确认服务器的sshd_config文件中的这几个配置打开
+        RSAAuthentication yes
+        PubkeyAuthentication yes
+        AuthorizedKeysFile .ssh/authorized_keys
+    注意：更改配置后，应该重启ssh服务
+    service ssh restart --- ubuntu系统
+    /etc/init.d/ssh restart --- debian系统
+    方案一：
+        ssh-copy-id user@host
+    方案二：
+        ssh user@host 'mkdir -p .ssh && cat >> .ssh/authorized_keys' < ~/.ssh/id_rsa.pub
+----------------------------------------------------------------------------------------
+    方案三：
+        参考吴卓shell脚本
+        1）拷贝跳板机的私钥到本机
+        2）配置/.ssh/config文件，多ssh账号登录，访问特定host的时候，使用指定的秘钥文件
+        Host 别名
+        HostName        主机名
+        Port            端口
+        User            用户名
+        IdentityFile    密钥文件的路径
+        ProxyCommand ssh cn5 exec nc %h %p 2>/dev/null
+
+        Host *
+        User xinqiao.liu
+        ServerAliveInterval 30
+        ControlMaster auto
+        ControlPath ~/.ssh/persist/master-%r@%h:%p
+        ControlPersist yes
+    补充：
+        配置片段：
+        Host cn0
+        Hostname l-rtools1.ops.cn0.qunar.com
+        Host *.cn0
+        ProxyCommand ssh cn0 exec nc %h %p 2>/dev/null
+        ProxyCommand：比较重要，指定我们访问*.cn0这个域名的时候使用跳板机cn0作为代理，nc是NetCat，一个网络工具
+
+        ControlMaster：可以复用之前已经建立的连接。所以开启这个功能之后，如果已经有一条到relay的链接，那
+        么再连接的时候，就不需要再输入密码了。
+
+        ControlPersist：在最后一个连接关闭之后也不真正的关掉连接，这样后面再连接的时候就还是不用输入密码。
+
+        ControlPath：指定一个目录，可能是存放用来复用连接的信息的一个路径，具体没研究过
