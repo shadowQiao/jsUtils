@@ -1,10 +1,16 @@
-1.git branch
-批量删除一堆分支
--d
-git branch |grep '关键词'|xargs git branch -d
+1.删除本地分支，批量删除一堆分支
+    git branch -D
+    git branch |grep '关键词'|xargs git branch -d
 2.克隆远程分支
 方法一：
-git fetch
-git checkout -b branchname origin/branchname
+    git fetch
+    git checkout -b branchname origin/branchname
 方法二：
-git fetch origin 远程分支名x：本地分支名x
+    git fetch origin 远程分支名x：本地分支名x
+3.版本回退
+    git reset --hard head当前版本
+    git reset --hard head^
+    git reset --hard head^^
+    git reset --hard head~3
+4.删除远程分支
+    git push origin :远程分支名
