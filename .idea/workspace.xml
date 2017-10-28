@@ -51,8 +51,8 @@
       <file leaf-file-name="linux命令" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/readme/linux命令">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="42" column="6" lean-forward="true" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+            <state relative-caret-position="340">
+              <caret line="47" column="25" lean-forward="false" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -343,12 +343,12 @@
       <workItem from="1508986225976" duration="1516000" />
       <workItem from="1508997033602" duration="5786000" />
       <workItem from="1509028248105" duration="9864000" />
-      <workItem from="1509180352585" duration="922000" />
+      <workItem from="1509180352585" duration="1350000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65310000" />
+    <option name="totallyTimeSpent" value="65738000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="6" />
@@ -736,8 +736,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/readme/linux命令">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="42" column="6" lean-forward="true" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+        <state relative-caret-position="340">
+          <caret line="47" column="25" lean-forward="false" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
           <folding />
         </state>
       </provider>
