@@ -1,0 +1,36 @@
+class Test {
+    constructor() {
+
+    }
+    sayHi() {
+
+    }
+}
+var test = {
+    sayHi() {
+
+    }
+}
+1.class声明的对象sayHi默认为不可枚举的，对象字面量中的sayHi是可枚举的
+2.class Test变量声明不会提升
+3.不会在全局对象window上面创建一个属性Test
+4.var x = class Y { .. }
+5.在子类构造器中，super调用前不能访问this
+6.默认如果省略子类构造器，调用
+constructor(...args) {
+	super(...args);
+}
+7.在任意的构造器中，new.target总是指向new实际直接调用的构造器
+8.
+class Bar extends Foo {
+    static awesome() {
+        super.cool();
+        console.log( "awesome" );
+    }
+    neat() {
+        super.wow();
+        console.log( "neat" );
+    }
+}
+Bar.awesome();
+9.Symbol.species

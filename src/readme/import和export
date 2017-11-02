@@ -1,0 +1,25 @@
+export语法：
+    export var a;
+    export function a() {};
+    export {
+        a
+    };
+    export default a; 注意：export default是静态快照，如果a改变，引用a的模块的a不会改变
+    export default function a() {};
+    export {
+        a as default
+    };
+    export {a} from './baz';
+    export {a as b} from './baz';
+    export * from './baz';
+    export default var a;  ×
+import语法：声明提升
+    import {a} from 'baz';
+    import {a as c} from 'baz';
+    import a from 'baz';
+    import {default as a} from 'baz';
+    import a, {b, c as d} from 'baz';
+    import * as a from 'baz'; 注意：如果baz模块中有default声明，全部导入的时候会有将其作为default属性导出
+    import 'baz';
+
+

@@ -14,3 +14,10 @@
     git reset --hard head~3
 4.删除远程分支
     git push origin :远程分支名
+5.查看分支
+    git branch -a 查看本地和远程所有分支
+    git branch -r 查看远程所有分支
+6.新建分支
+    git branch -f 分支名 新建分支
+7.重命名本地分支
+    git branch -m 旧分支名 新分支名

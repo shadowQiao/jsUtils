@@ -1,0 +1,2 @@
+npm config set registry http://npmrepo.corp.qunar.com
+npm install --registry=https://registry.npm.taobao.org
