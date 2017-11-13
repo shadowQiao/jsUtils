@@ -1,0 +1,47 @@
+(function() {
+    var Notification,
+        requestPermission;
+    if (!(Notification = window.Notification) || !(requestPermission = Notification.requestPermission)) {
+        return;
+    }
+    requestPermission(function(ret) {
+        console.dir(ret);
+    });
+    requestPermission().then(function(ret) {
+    })
+})();
+
+setTimeout(function() {
+    var notify = new Notification('女神说:', {
+        body: '真的好羞羞哒',
+        tag: '呵呵',
+        icon: 'https://imgs.qunarzz.com/vc/b0/64/1d/c8daab85d562fcd4e0be1da17f.jpg_210x140x92.jpg',
+        data: {
+            secret: '我也不知道我是啥'
+        },
+        vibrate: [1000, 200],
+        renotify: true,
+        silent: false,
+        noscreen: true
+    });
+    notify.onclick = function() {
+        console.dir('I am clicked!');
+        console.dir(arguments);
+    };
+    notify.onclose = function() {
+        console.dir('I am closed!');
+        console.dir(arguments);
+    };
+    notify.onerror = function() {
+        console.dir('I am error!');
+        console.dir(arguments);
+    };
+    notify.onshow = function() {
+        console.dir('I am show!');
+        console.dir(arguments);
+    };
+}, 2000);
+
+
+Notification.permission 只有三种值
+granted  denied  default

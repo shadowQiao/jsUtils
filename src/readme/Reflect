@@ -1,0 +1,29 @@
+1.Reflect的静态方法
+    Reflect.apply(target, thisArgs, args);
+    Reflect.construct(target, args);
+    Reflect.get(target, name, receiver);
+    Reflect.set(target, name, value, receiver);
+    Reflect.has(obj, name);
+    Reflect.deleteProperty(obj, name);
+    Reflect.construct(target, args);
+    Reflect.getPrototypeOf(obj);
+    如果参数不是对象，Object.getPrototypeOf会将参数转为对象，Reflect.getPrototypeOf则会报错
+    Reflect.setPrototypeOf(obj, newObj);
+    如果参数不是对象，Object.getPrototypeOf会返回参数本身，Reflect.getPrototypeOf则会报错
+    Reflect.apply(func, thisArg, args);
+    <=>
+    Function.prototype.apply.call(func, thisArg, args);
+    Reflect.defineProperty(target, propertyKey, attributes);
+    如果第一个参数不是对象，会报错
+    Reflect.getOwnPropertyDescriptor(target, propertyKey);
+    区别同样在会报错
+    Reflect.isExtensible(target);
+    Reflect.preventExtensions(target);
+    Reflect.ownKeys(target)
+    等于Object.getOwnPropertyNames和Object.getOwnPropertySymbols之和
+
+
+
+
+
+

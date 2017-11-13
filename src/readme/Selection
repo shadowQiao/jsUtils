@@ -1,0 +1,22 @@
+1.创建选区
+    document.getSelection();
+2.Selection对象的属性
+    anchorNode
+    anchorOffset
+    focusNode
+    focusOffset
+    isCollapsed
+    rangeCount
+3.选区的方法
+    selection.addRange()
+    selection.collapse(node, offset);
+    selection.collapseToEnd();
+    selection.collapseToStart();
+    selection.containsNode(node);
+    selection.deleteFromDocument();
+    selection.extend(node, offset);
+    selection.getRangeAt(index);
+    selection.removeAllRanges();
+    selection.removeRange(range);
+    selection.selectAllChildren(node);
+    selection.toString();

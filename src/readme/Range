@@ -1,0 +1,64 @@
+1.创建Range
+    document.createRange();
+    window.createRange();
+2.Range的属性
+    range.startContainer
+    range.endContainer
+    range.startOffset
+    range.endOffset
+    range.commonAncestorContainer
+3.简单选择
+    range.selectNode();
+    range.selectNodeContents();
+    range.setStartBefore(refNode);
+    range.setStartAfter(refNode);
+    range.setEndBefore(refNode);
+    range.setEndAfter(refNode);
+4.复杂选择
+    range.setStart(refNode, offset);
+    range.setEnd(refNode, offset);
+5.操作范围的内容
+    range.deleteContents();
+    range.extractContents();
+    range.cloneContents();
+    range.insertNode(node);
+    range.surroundContents(node);
+6.折叠DOM范围
+    range.collapse();
+    range.collapsed
+7.比较范围
+    range.compareBoundaryPoints(Range.START_TO_START, range1);
+    Range.START_TO_END
+    Range.END_TO_START
+    Range.END_TO_END
+8.复制范围
+    range.cloneRange()
+9.清理范围
+    range.detach();
+    range = null
+IE8及更早版本中的范围
+1.创建textRange
+    body,button,input,textarea,document都可以调用
+    document.createTextRange()
+2.选择Range
+    tRange.findText('文本', direction)
+    direction为正数，从当前向前搜索
+    direction为负数，从当前向后搜索
+3.textRange的属性
+    tRange.text
+    tRange.moveToElementText(node);
+    tRange.htmlText
+    tRange.parentElement()
+    单位：character word sentence
+    tRange.moveStart(单位, 长度);
+    tRange.moveEnd(单位, 长度);
+    tRange.boundingTop/Left/Right/Bottom
+    tRange.collapse(true/false)
+4.操作范围的内容
+    tRange.text
+    tRange.pasteHTML(html字符串)
+5.比较范围
+    tRange.compareEndPoints()
+    tRange.compareBoundaryPoints('StartToEnd/StartToStart/EndToStart/EndToEnd', range2)
+    tRange.isEquel(range2);
+    tRange.inRange(range2);

@@ -98,6 +98,9 @@
     读取stdin，将格式化后的参数传递给命令
     -I 指定一个替换字符串
         ls *.jpg | xargs -n1 -I {} cp {} /data/images
+12.nslookup命令
+    常用域名查询工具，就是查DNS信息用的命令。nslookup会连接到默认的域名服务器（即/etc/resolv.conf的第一个dns地址）
+    nslookup ip地址 可以获取该ip地址的机器名
 
 
 
